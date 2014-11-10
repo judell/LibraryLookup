@@ -21,7 +21,7 @@ queries['innovative'] = '/search/i=\'+isbn,';
 //queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
 //queries['ds'] = '/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=\'+isbn,';
 //queries['talis'] = '/resolver/lookup.opacs?sid=redirect:DOMAINNAME&isbn=\'+isbn,';
-queries['pica'] = '/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=\'+isbn,';
+//queries['pica'] = '/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=\'+isbn,';
 queries['sirsi'] = '/uhtbin/cgisirsi/x/0/0/5/?searchdata1=\'+isbn,';
 //queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
 queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=\'+isbn,';
@@ -47,7 +47,7 @@ bookmarklets['innovative'] = pre + '\'BASEURL\'+\'' + queries['innovative'] +  p
 //bookmarklets['dra']        = pre + '\'BASEURL\'+\'' + queries['dra']        +  post;
 //bookmarklets['ds']         = pre + '\'BASEURL\'+\'' + queries['ds']         +  post;
 //bookmarklets['talis']      = pre + '\'BASEURL\'+\'' + queries['talis']      +  post;
-bookmarklets['pica']       = pre + '\'BASEURL\'+\'' + queries['pica']       +  post;
+//bookmarklets['pica']       = pre + '\'BASEURL\'+\'' + queries['pica']       +  post;
 bookmarklets['sirsi']      = pre + '\'BASEURL\'+\'' + queries['sirsi']      +  post;
 //bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
 bookmarklets['sirsi3']     = pre + '\'BASEURL\'+\'' + queries['sirsi3']     + post;
@@ -177,7 +177,9 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <!--
 <br><input type="radio" name="vendors" value="ds"> DS (UK) (<a href="http://intranet.cheshire.gov.uk/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=1857237641">example</a>)
 -->
+<!--
 <br><input type="radio" name="vendors" value="pica"> Pica (<a href="http://s250.b.tu-harburg.de:8080/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=157987736">example</a>)
+-->
 <br><input type="radio" name="vendors" value="gaylord"> Gaylord (PowerPac)<sup>2</sup> (<a href="http://www.solis.lib.or.us/Polaris/Search/z3950Gateway.dll/PowerPac.1?by=ISBN&loc=SearchResult&term=0028649249">example</a>) 
 <br><input type="radio" name="vendors" value="gaylord3"> Gaylord (PowerPac 3.0)<sup>2</sup> (<a href="http://www.wilinet.wccls.lib.or.us/Polaris/Search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
 <br><input type="radio" name="vendors" value="gaylord4"> Gaylord (PowerPac ??) (<a href="http://www.wccls.org/polaris/Search/fulldisplay.aspx?type=Keyword&term=9780545010221&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0">example</a>)
