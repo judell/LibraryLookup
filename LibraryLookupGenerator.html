@@ -36,7 +36,7 @@ queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
 //queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
 //queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
 //queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
-queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
+//queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
 queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
 queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
 
@@ -202,7 +202,9 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <!--
 <br><input type="radio" name="vendors" value="winnebago"> Winnebago (<a href="http://64.222.191.15/winnebago/search/found.asp?term1=0316172324&index1=IB">example</a>)
 -->
+<!--
 <br><input type="radio" name="vendors" value="athena"> Athena (<a href="http://69.21.252.114/athcgi/athweb.pl?a=sr&ci=HS&st=adv&k1=0316172324"">example</a>) <sup>9</sup> <input size="6" name="athena" />
+-->
 <br><input type="radio" name="vendors" value="sagebrush"> Sagebrush (<a href="http://71.233.230.231/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=089296717X">example</a>)
 <br><input type="radio" name="vendors" value="bibliocommons"> BiblioCommons (<a href="http://bpl.bibliocommons.com/search?custom_query=identifier%3A(9781400066407)">example</a>)
 </td>
