@@ -18,12 +18,12 @@ var post = '\'LibraryLookup\',\'scrollbars=1,resizable=1,top=0,left=0,location=1
 queries['innovative'] = '/search/i=\'+isbn,';
 // queries['voyager'] = '/cgi-bin/Pwebrecon.cgi?SAB1=\'+isbn+\'&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25\',';
 //queries['ipac'] = '/ipac20/ipac.jsp?index=VAR1&term=\'+isbn,';
-queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
+//queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
 queries['ds'] = '/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=\'+isbn,';
 queries['talis'] = '/resolver/lookup.opacs?sid=redirect:DOMAINNAME&isbn=\'+isbn,';
 queries['pica'] = '/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=\'+isbn,';
 queries['sirsi'] = '/uhtbin/cgisirsi/x/0/0/5/?searchdata1=\'+isbn,';
-queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
+//queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
 queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=\'+isbn,';
 queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
 queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
@@ -44,12 +44,12 @@ queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
 bookmarklets['innovative'] = pre + '\'BASEURL\'+\'' + queries['innovative'] +  post;
 //bookmarklets['voyager']    = pre + '\'BASEURL\'+\'' + queries['voyager']    +  post;
 //bookmarklets['ipac']       = pre + '\'BASEURL\'+\'' + queries['ipac']       +  post;
-bookmarklets['dra']        = pre + '\'BASEURL\'+\'' + queries['dra']        +  post;
+//bookmarklets['dra']        = pre + '\'BASEURL\'+\'' + queries['dra']        +  post;
 bookmarklets['ds']         = pre + '\'BASEURL\'+\'' + queries['ds']         +  post;
 bookmarklets['talis']      = pre + '\'BASEURL\'+\'' + queries['talis']      +  post;
 bookmarklets['pica']       = pre + '\'BASEURL\'+\'' + queries['pica']       +  post;
 bookmarklets['sirsi']      = pre + '\'BASEURL\'+\'' + queries['sirsi']      +  post;
-bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
+//bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
 bookmarklets['sirsi3']     = pre + '\'BASEURL\'+\'' + queries['sirsi3']     + post;
 bookmarklets['gaylord']    = pre + '\'BASEURL\'+\'' + queries['gaylord']    +  post;
 bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
@@ -163,9 +163,11 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <!--
 <br><input type="radio" name="vendors" value="ipac"> iPac<sup>1</sup> (<a href="http://www.elpl.org:81/ipac20/ipac.jsp?index=ISBN&term=1579903002">example</a>) <input name="ipac" value="ISBN"/>
 -->
-<br><input type="radio" name="vendors" value="dra"> Sirsi/DRA (<a href="http://splcat.saskatoonlibrary.ca/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=(&query=1579903002">example</a>) 
+<br><input type="radio" name="vendors" value="dra"> Sirsi/DRA (<a href="http://jpl.coj.net/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=(&query=1579903002">example</a>) 
 <br><input type="radio" name="vendors" value="sirsi"> Sirsi (WebCat)<sup>2</sup> (<a href="http://library.usc.edu/uhtbin/cgisirsi/x/0/0/5/?searchdata1=067165991X">example</a>)
+<!--
 <br><input type="radio" name="vendors" value="sirsi2"> Sirsi/Web2 (<a href="http://catalog.library.phila.gov/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=0767910052">example</a>)
+-->
 <br><input type="radio" name="vendors" value="sirsi3"> Sirsi/Dynix (<a href="http://find.sonomalibrary.org/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=0767910052">example</a>) 
 <br><input type="radio" name="vendors" value="talis"> Talis (<a href="http://opacs.talis.com/resolver/lookup.opacs?sid=redirect:boroughofpoole.com&isbn=0747255989">example</a>) 
 <br><input type="radio" name="vendors" value="ds"> DS (UK) (<a href="http://intranet.cheshire.gov.uk/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=1857237641">example</a>)
