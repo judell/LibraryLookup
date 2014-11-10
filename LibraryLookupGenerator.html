@@ -28,9 +28,9 @@ queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||fals
 //queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
 //queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
 //queries['gaylord4'] = '/polaris/Search/fulldisplay.aspx?&type=Keyword&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0&term=\'+isbn,';
-queries['koha'] = '/cgi-bin/koha/opac-searchresults.pl?isbn=\'+isbn,';
-queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
-queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
+queries['koha'] = '/cgi-bin/koha/opac-search.pl?idx=nb&q=\'+isbn,';
+//queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
+//queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
 queries['aleph'] = '/F/?find_code=VAR1&func=VAR2&local_base=VAR3&request=\'+isbn,';
 queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
 queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
@@ -185,10 +185,12 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <br><input type="radio" name="vendors" value="gaylord3"> Gaylord (PowerPac 3.0)<sup>2</sup> (<a href="http://www.wilinet.wccls.lib.or.us/Polaris/Search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
 <br><input type="radio" name="vendors" value="gaylord4"> Gaylord (PowerPac ??) (<a href="http://www.wccls.org/polaris/Search/fulldisplay.aspx?type=Keyword&term=9780545010221&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0">example</a>)
 -->
-<br><input type="radio" name="vendors" value="koha"> Koha (<a href="http://opac.library.org.nz/cgi-bin/koha/opac-searchresults.pl?isbn=0431091080">example</a>)
+<br><input type="radio" name="vendors" value="koha"> Koha (<a href="http://library.org.nz/cgi-bin/koha/opac-search.pl?idx=nb&q=9781410447197">example</a>)
+<!--
 <br><input type="radio" name="vendors" value="eosQ"> EOS Q-Series/EOS.Web (<a href="http://www.nappanee.lib.in.us/WEBOPAC/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=0385504209
-">example</a>)<sup>3</sup> <input name="eosQ" value="WEBOPAC"/> 
+">example</a>)<sup>3</sup> <input name="eosQ" value="WEBOPAC"/>
 <br><input type="radio" name="vendors" value="eosGLAS"> EOS GLAS (<a href="http://library.capitol-college.edu/GLASOPAC/Search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=0072194669">example</a>)<sup>4</sup> <input name="eosGLAS" value="GLASOPAC"/>
+-->
 <br><input type="radio" name="vendors" value="aleph"> Aleph (older) (<a href="http://aleph2.libnet.ac.il/F/?func=find-b&local_base=uli02&find_code=WSB&request=0415936772">example</a>) <sup>5</sup> <input size="6" name="aleph" /> <sup>6</sup> <input size="6" name="aleph2" /> <sup>7</sup> <input size="6" name="aleph3" />
 <br><input type="radio" name="vendors" value="aleph2"> Aleph (newer) (<a href="http://lms01.harvard.edu/F/?func=scan&scan_code=IBN&scan_start=1565925378">example</a>) 
 <br><input type="radio" name="vendors" value="tlc"> TLC (<a href="http://bnac.state.ky.us/TLCScripts/interpac.dll?Browse&Config=PSL&SearchType=3&SearchField=4096&SearchData=0471128996">example</a>) <sup>8</sup> <input size="6" name="tlc" /> 
