@@ -25,9 +25,9 @@ queries['innovative'] = '/search/i=\'+isbn,';
 queries['sirsi'] = '/uhtbin/cgisirsi/x/0/0/5/?searchdata1=\'+isbn,';
 //queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
 queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=\'+isbn,';
-queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
-queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
-queries['gaylord4'] = '/polaris/Search/fulldisplay.aspx?&type=Keyword&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0&term=\'+isbn,';
+//queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
+//queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
+//queries['gaylord4'] = '/polaris/Search/fulldisplay.aspx?&type=Keyword&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0&term=\'+isbn,';
 queries['koha'] = '/cgi-bin/koha/opac-searchresults.pl?isbn=\'+isbn,';
 queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
 queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
@@ -51,9 +51,9 @@ bookmarklets['innovative'] = pre + '\'BASEURL\'+\'' + queries['innovative'] +  p
 bookmarklets['sirsi']      = pre + '\'BASEURL\'+\'' + queries['sirsi']      +  post;
 //bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
 bookmarklets['sirsi3']     = pre + '\'BASEURL\'+\'' + queries['sirsi3']     + post;
-bookmarklets['gaylord']    = pre + '\'BASEURL\'+\'' + queries['gaylord']    +  post;
-bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
-bookmarklets['gaylord4']   = pre + '\'BASEURL\'+\'' + queries['gaylord4']   +  post;
+//bookmarklets['gaylord']    = pre + '\'BASEURL\'+\'' + queries['gaylord']    +  post;
+//bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
+//bookmarklets['gaylord4']   = pre + '\'BASEURL\'+\'' + queries['gaylord4']   +  post;
 bookmarklets['koha']       = pre + '\'BASEURL\'+\'' + queries['koha']       +  post;
 bookmarklets['eosQ']       = pre + '\'BASEURL\'+\'' + queries['eosQ']       +  post;
 bookmarklets['eosGLAS']    = pre + '\'BASEURL\'+\'' + queries['eosGLAS']    +  post;
@@ -180,9 +180,11 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <!--
 <br><input type="radio" name="vendors" value="pica"> Pica (<a href="http://s250.b.tu-harburg.de:8080/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=157987736">example</a>)
 -->
+<!--
 <br><input type="radio" name="vendors" value="gaylord"> Gaylord (PowerPac)<sup>2</sup> (<a href="http://www.solis.lib.or.us/Polaris/Search/z3950Gateway.dll/PowerPac.1?by=ISBN&loc=SearchResult&term=0028649249">example</a>) 
 <br><input type="radio" name="vendors" value="gaylord3"> Gaylord (PowerPac 3.0)<sup>2</sup> (<a href="http://www.wilinet.wccls.lib.or.us/Polaris/Search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
 <br><input type="radio" name="vendors" value="gaylord4"> Gaylord (PowerPac ??) (<a href="http://www.wccls.org/polaris/Search/fulldisplay.aspx?type=Keyword&term=9780545010221&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0">example</a>)
+-->
 <br><input type="radio" name="vendors" value="koha"> Koha (<a href="http://opac.library.org.nz/cgi-bin/koha/opac-searchresults.pl?isbn=0431091080">example</a>)
 <br><input type="radio" name="vendors" value="eosQ"> EOS Q-Series/EOS.Web (<a href="http://www.nappanee.lib.in.us/WEBOPAC/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=0385504209
 ">example</a>)<sup>3</sup> <input name="eosQ" value="WEBOPAC"/> 
