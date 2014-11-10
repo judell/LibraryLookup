@@ -31,11 +31,11 @@ queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||fals
 queries['koha'] = '/cgi-bin/koha/opac-search.pl?idx=nb&q=\'+isbn,';
 //queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
 //queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
-queries['aleph'] = '/F/?find_code=VAR1&func=VAR2&local_base=VAR3&request=\'+isbn,';
+//queries['aleph'] = '/F/?find_code=VAR1&func=VAR2&local_base=VAR3&request=\'+isbn,';
 queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
-queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
-queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
-queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
+//queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
+//queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
+//queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
 queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
 queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
 queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
@@ -55,13 +55,13 @@ bookmarklets['sirsi3']     = pre + '\'BASEURL\'+\'' + queries['sirsi3']     + po
 //bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
 //bookmarklets['gaylord4']   = pre + '\'BASEURL\'+\'' + queries['gaylord4']   +  post;
 bookmarklets['koha']       = pre + '\'BASEURL\'+\'' + queries['koha']       +  post;
-bookmarklets['eosQ']       = pre + '\'BASEURL\'+\'' + queries['eosQ']       +  post;
-bookmarklets['eosGLAS']    = pre + '\'BASEURL\'+\'' + queries['eosGLAS']    +  post;
-bookmarklets['aleph']      = pre + '\'BASEURL\'+\'' + queries['aleph']      +  post;
+//bookmarklets['eosQ']       = pre + '\'BASEURL\'+\'' + queries['eosQ']       +  post;
+//bookmarklets['eosGLAS']    = pre + '\'BASEURL\'+\'' + queries['eosGLAS']    +  post;
+//bookmarklets['aleph']      = pre + '\'BASEURL\'+\'' + queries['aleph']      +  post;
 bookmarklets['aleph2']     = pre + '\'BASEURL\'+\'' + queries['aleph2']     +  post;
-bookmarklets['tlc']        = pre + '\'BASEURL\'+\'' + queries['tlc']        +  post;
-bookmarklets['tlcaqua']    = pre + '\'BASEURL\'+\'' + queries['tlcaqua']    +  post;
-bookmarklets['winnebago']  = pre + '\'BASEURL\'+\'' + queries['winnebago']  +  post;
+//bookmarklets['tlc']        = pre + '\'BASEURL\'+\'' + queries['tlc']        +  post;
+//bookmarklets['tlcaqua']    = pre + '\'BASEURL\'+\'' + queries['tlcaqua']    +  post;
+//bookmarklets['winnebago']  = pre + '\'BASEURL\'+\'' + queries['winnebago']  +  post;
 bookmarklets['athena']     = pre + '\'BASEURL\'+\'' + queries['athena']     +  post;
 bookmarklets['sagebrush']  = pre + '\'BASEURL\'+\'' + queries['sagebrush']  +  post;
 bookmarklets['bibliocommons']  = pre + '\'BASEURL\'+\'' + queries['bibliocommons']  +  ')' + post;
@@ -191,11 +191,17 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 ">example</a>)<sup>3</sup> <input name="eosQ" value="WEBOPAC"/>
 <br><input type="radio" name="vendors" value="eosGLAS"> EOS GLAS (<a href="http://library.capitol-college.edu/GLASOPAC/Search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=0072194669">example</a>)<sup>4</sup> <input name="eosGLAS" value="GLASOPAC"/>
 -->
+<!--
 <br><input type="radio" name="vendors" value="aleph"> Aleph (older) (<a href="http://aleph2.libnet.ac.il/F/?func=find-b&local_base=uli02&find_code=WSB&request=0415936772">example</a>) <sup>5</sup> <input size="6" name="aleph" /> <sup>6</sup> <input size="6" name="aleph2" /> <sup>7</sup> <input size="6" name="aleph3" />
-<br><input type="radio" name="vendors" value="aleph2"> Aleph (newer) (<a href="http://lms01.harvard.edu/F/?func=scan&scan_code=IBN&scan_start=1565925378">example</a>) 
+-->
+<br><input type="radio" name="vendors" value="aleph2"> Aleph (<a href="http://lms01.harvard.edu/F/?func=scan&scan_code=IBN&scan_start=1565925378">example</a>)
+<!--
 <br><input type="radio" name="vendors" value="tlc"> TLC (<a href="http://bnac.state.ky.us/TLCScripts/interpac.dll?Browse&Config=PSL&SearchType=3&SearchField=4096&SearchData=0471128996">example</a>) <sup>8</sup> <input size="6" name="tlc" /> 
-<br><input type="radio" name="vendors" value="tlcaqua"> TLC Aqua (<a href="http://aquab.ocln.org/?q=isbn:0152022686">example</a>) 
-<br><input type="radio" name="vendors" value="winnebago"> Winnebago (<a href="http://64.222.191.15/winnebago/search/found.asp?term1=0316172324&index1=IB">example</a>) 
+<br><input type="radio" name="vendors" value="tlcaqua"> TLC Aqua (<a href="http://aquab.ocln.org/?q=isbn:0152022686">example</a>)
+-->
+<!--
+<br><input type="radio" name="vendors" value="winnebago"> Winnebago (<a href="http://64.222.191.15/winnebago/search/found.asp?term1=0316172324&index1=IB">example</a>)
+-->
 <br><input type="radio" name="vendors" value="athena"> Athena (<a href="http://69.21.252.114/athcgi/athweb.pl?a=sr&ci=HS&st=adv&k1=0316172324"">example</a>) <sup>9</sup> <input size="6" name="athena" />
 <br><input type="radio" name="vendors" value="sagebrush"> Sagebrush (<a href="http://71.233.230.231/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=089296717X">example</a>)
 <br><input type="radio" name="vendors" value="bibliocommons"> BiblioCommons (<a href="http://bpl.bibliocommons.com/search?custom_query=identifier%3A(9781400066407)">example</a>)
