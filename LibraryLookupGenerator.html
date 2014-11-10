@@ -37,7 +37,7 @@ queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
 //queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
 //queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
 //queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
-queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
+//queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
 queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
 
 
@@ -62,8 +62,8 @@ bookmarklets['aleph2']     = pre + '\'BASEURL\'+\'' + queries['aleph2']     +  p
 //bookmarklets['tlc']        = pre + '\'BASEURL\'+\'' + queries['tlc']        +  post;
 //bookmarklets['tlcaqua']    = pre + '\'BASEURL\'+\'' + queries['tlcaqua']    +  post;
 //bookmarklets['winnebago']  = pre + '\'BASEURL\'+\'' + queries['winnebago']  +  post;
-bookmarklets['athena']     = pre + '\'BASEURL\'+\'' + queries['athena']     +  post;
-bookmarklets['sagebrush']  = pre + '\'BASEURL\'+\'' + queries['sagebrush']  +  post;
+//bookmarklets['athena']     = pre + '\'BASEURL\'+\'' + queries['athena']     +  post;
+//bookmarklets['sagebrush']  = pre + '\'BASEURL\'+\'' + queries['sagebrush']  +  post;
 bookmarklets['bibliocommons']  = pre + '\'BASEURL\'+\'' + queries['bibliocommons']  +  ')' + post;
 
 function build()
@@ -205,7 +205,9 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 <!--
 <br><input type="radio" name="vendors" value="athena"> Athena (<a href="http://69.21.252.114/athcgi/athweb.pl?a=sr&ci=HS&st=adv&k1=0316172324"">example</a>) <sup>9</sup> <input size="6" name="athena" />
 -->
+<!--
 <br><input type="radio" name="vendors" value="sagebrush"> Sagebrush (<a href="http://71.233.230.231/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=089296717X">example</a>)
+-->
 <br><input type="radio" name="vendors" value="bibliocommons"> BiblioCommons (<a href="http://bpl.bibliocommons.com/search?custom_query=identifier%3A(9781400066407)">example</a>)
 </td>
 </tr>
