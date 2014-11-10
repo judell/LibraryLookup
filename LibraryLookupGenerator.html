@@ -2,22 +2,21 @@
 <head>
 <title>Jon Udell: The LibraryLookup Bookmarklet Generator</title>
 <style>
-<!--
 body { margin: .5in; font-size: 10pt; font-family: verdana, arial, sans-serif }
 h1 { text-align: center; font-size: 14pt }
--->
 </style>
 <script language="javascript">
 </script>
 </head>
 <body>
 <h1>The LibraryLookup Bookmarklet Generator</h1>
-<script language="javascript"><!--
+<script language="javascript">
 var bookmarklets = new Array;
 var queries = new Array;
 var pre = 'javascript:setTimeout(\'x99.focus()\',300);var%20re=/([\\/-]|is[bs]n=)(\\d{7,9}[\\dX])/i;if(re.test(location.href)==true){var%20isbn=RegExp.\$2;var%20x99=window.open(';
 var post = '\'LibraryLookup\',\'scrollbars=1,resizable=1,top=0,left=0,location=1,width=800,height=600\');x99.focus();}';
 queries['innovative'] = '/search/i=\'+isbn,';
+
 queries['voyager'] = '/cgi-bin/Pwebrecon.cgi?SAB1=\'+isbn+\'&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25\',';
 queries['ipac'] = '/ipac20/ipac.jsp?index=VAR1&term=\'+isbn,';
 queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
@@ -137,7 +136,7 @@ function build()
 	document.write('</body></html>');
 	document.close();
 }
---></script>
+</script>
 <p>
 Can't find your library on one of the <a href="http://weblog.infoworld.com/udell/stories/2002/12/11/librarylookup.html">lists</a>? Try building your own bookmarklet.
 </p>
@@ -243,4 +242,18 @@ There are zillions of <a href="http://www.libdex.com/vendor.html">vendors</a> of
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
