@@ -17,6 +17,9 @@ var pre = 'javascript:setTimeout(\'x99.focus()\',300);var%20re=/([\\/-]|is[bs]n=
 var post = '\'LibraryLookup\',\'scrollbars=1,resizable=1,top=0,left=0,location=1,width=800,height=600\');x99.focus();}';
 queries['innovative'] = '/search/i=\'+isbn,';
 
+queries['worldcat'] = '/search?qt=worldcat_org_all&q=\'+isbn,';
+queries['evergreen'] = 'https://gapines.org/eg/opac/results?qtype=keyword&locg=1&query=\'+isbn,';
+queries['exlibris'] = '/primo_library/libweb/action/search.do?fn=search&vid=UTDALMA&Submit=Search&vl%28freeText0%29=\'+isbn,';
 queries['voyager'] = '/cgi-bin/Pwebrecon.cgi?SAB1=\'+isbn+\'&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25\',';
 queries['ipac'] = '/ipac20/ipac.jsp?index=VAR1&term=\'+isbn,';
 queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
@@ -41,7 +44,9 @@ queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
 queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
 queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
 
-
+bookmarklets['worldcat']   = pre + '\'BASEURL\'+\'' + queries['worldcat']   +  post;
+bookmarklets['evergreen']   = pre + '\'BASEURL\'+\'' + queries['evergreen']   +  post;
+bookmarklets['exlibris']   = pre + '\'BASEURL\'+\'' + queries['exlibris']   +  post;
 bookmarklets['innovative'] = pre + '\'BASEURL\'+\'' + queries['innovative'] +  post;
 bookmarklets['voyager']    = pre + '\'BASEURL\'+\'' + queries['voyager']    +  post;
 bookmarklets['ipac']       = pre + '\'BASEURL\'+\'' + queries['ipac']       +  post;
@@ -106,7 +111,7 @@ function build()
 	var t = queries[vendor];       // for the interactive test
 
 	var tr = new RegExp('\'\\+isbn,|\'\\+isbn\\+\'');
-	t = t.replace ( tr, '1579903002' );
+	t = t.replace ( tr, '9781400066407' );
 
 	var re = new RegExp('DOMAINNAME');
     t = t.replace ( re, domainname );
@@ -132,13 +137,13 @@ function build()
 	t = t.replace ( re, '' );
 
 	document.write('<html><head><style>body{font-family:verdana;margin:30px;}</style><title>LibraryLookup bookmarklet for ' + libname + '</title></head><body>');
- 	document.write('First test the URL that your bookmarklet will try to fetch. Click <a href="' + baseurl + t + '">here</a>.</p><p>If it worked, here is the same URL wrapped up in your bookmarklet: <a href="' + q + '">' + libname + '</a>. Drag it to your link toolbar.</p><p>Base URL: ' + baseurl + '<br>Vendor: ' + vendor + '</p><p>Bookmarklet text: ' + q + '</p><p>Problems dragging your bookmarklet to the link toolbar? See <a href="http://weblog.infoworld.com/udell/2006/03/20.html">this screencast</a>.</p><p>The <a href="http://weblog.infoworld.com/udell/stories/2002/12/11/librarylookup.html">LibraryLookup</a> project.</p>');
+ 	document.write('First test the URL that your bookmarklet will try to fetch. Click <a href="' + baseurl + t + '">here</a>.</p><p>If it worked, here is the same URL wrapped up in your bookmarklet: <a href="' + q + '">' + libname + '</a>. Drag it to your link toolbar.</p><p>Base URL: ' + baseurl + '<br>Vendor: ' + vendor + '</p><p>Bookmarklet text: ' + q + '</p><p>Problems dragging your bookmarklet to the link toolbar? See <a href="http://jonudell.net/udell/2006-03-20-bookmarklets-101.html">this screencast</a>.</p><p>The <a href="http://jonudell.net/udell/2002-12-11-librarylookup-bookmarklets.html">LibraryLookup</a> project.</p>');
 	document.write('</body></html>');
 	document.close();
 }
 </script>
 <p>
-Can't find your library on one of the <a href="http://weblog.infoworld.com/udell/stories/2002/12/11/librarylookup.html">lists</a>? Try building your own bookmarklet.
+Can't find your library on one of the <a href="http://jonudell.net/udell/2002-12-11-librarylookup-bookmarklets.html">lists</a>? Try building your own bookmarklet.
 </p>
 
 <form name="byo" action="javascript:build()">
@@ -146,18 +151,21 @@ Can't find your library on one of the <a href="http://weblog.infoworld.com/udell
 
 <tr>
 <td align="right">Base URL</td>
-<td><input size="30" value="http://ksclib.keene.edu" name="baseurl"> (Example: http://ksclib.keene.edu)</td>
+<td><input size="30" value="https://www.worldcat.org" name="baseurl"> (Example: https://www.worldcat.org)</td>
 </tr>
 
 <tr>
 <td align="right">Library Name</td>
-<td><input size="30" value="Keene Public Library" name="libname"> (Example: Keene Public Library)</td>
+<td><input size="30" value="WorldCat" name="libname"> (Example: WorldCat)</td>
 </tr>
 
 <tr>
 <td align="right">Vendor</td>
 <td>
-<input type="radio" name="vendors" value="innovative" checked> Innovative (<a href="http://ksclib.keene.edu/search/i=1579903002">example</a>)
+<input type="radio" name="vendors" value="worldcat" checked> WorldCat (<a href="http://www.worldcat.org/search?qt=worldcat_org_all&q=9781400066407">example</a>)
+<br><input type="radio" name="vendors" value="exlibris"> ExLibris (<a href="http://utdallas-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&vl%28freeText0%29=9781400066407&vid=UTDALMA&Submit=Search">example</a>)
+<br><input type="radio" name="vendors" value="evergreen"> Evergreen (<a href="https://gapines.org/eg/opac/results?qtype=keyword&locg=1&query=9781400066407">example</a>)
+<br><input type="radio" name="vendors" value="innovative"> Innovative (<a href="http://ksclib.keene.edu/search/i=1579903002">example</a>)
 <br><input type="radio" name="vendors" value="voyager"> Voyager (<a href="http://voyager.antiochne.edu/cgi-bin/Pwebrecon.cgi?SAB1=1579903002&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25">example</a>)
 <br><input type="radio" name="vendors" value="ipac"> iPac<sup>1</sup> (<a href="http://www.elpl.org:81/ipac20/ipac.jsp?index=ISBN&term=1579903002">example</a>) <input name="ipac" value="ISBN"/>
 <br><input type="radio" name="vendors" value="dra"> Sirsi/DRA (<a href="http://splcat.saskatoonlibrary.ca/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=(&query=1579903002">example</a>)
@@ -236,7 +244,7 @@ Click the sample search links, and look for a familiar results screen. Or, ask y
 What if my library uses a system that's not supported?
 </p>
 <p><b>A</b>:
-There are zillions of <a href="http://www.libdex.com/vendor.html">vendors</a> of library software. The LibraryLookup project can add support for yours if it is possible to form a URL that queries your system by ISBN (see the sample links above). That will be true for many, but not all, systems. If you can find the magic URL pattern for your system, <a href="mailto:judell@mv.com?subject=NewLibraryLookupUrlPattern">pass it along</a>.
+There are zillions of vendors of integrated library system (ILS) software. The LibraryLookup project can add support for yours if it is possible to form a URL that queries your system by ISBN (see the sample links above). That will be true for many, but not all, systems. If you can find the magic URL pattern for your system, <a href="https://github.com/judell/LibraryLookup/issues">pass it along</a>.
 </p>
 </form>
 
