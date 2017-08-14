@@ -16,56 +16,61 @@ var queries = new Array;
 var pre = 'javascript:setTimeout(\'x99.focus()\',300);var%20re=/([\\/-]|is[bs]n=)(\\d{7,9}[\\dX])/i;if(re.test(location.href)==true){var%20isbn=RegExp.\$2;var%20x99=window.open(';
 var post = '\'LibraryLookup\',\'scrollbars=1,resizable=1,top=0,left=0,location=1,width=800,height=600\');x99.focus();}';
 queries['innovative'] = '/search/i=\'+isbn,';
-// queries['voyager'] = '/cgi-bin/Pwebrecon.cgi?SAB1=\'+isbn+\'&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25\',';
-//queries['ipac'] = '/ipac20/ipac.jsp?index=VAR1&term=\'+isbn,';
-//queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
-//queries['ds'] = '/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=\'+isbn,';
-//queries['talis'] = '/resolver/lookup.opacs?sid=redirect:DOMAINNAME&isbn=\'+isbn,';
-//queries['pica'] = '/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=\'+isbn,';
-queries['sirsi'] = '/uhtbin/cgisirsi/x/0/0/5/?searchdata1=\'+isbn,';
-//queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
-queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=\'+isbn,';
-//queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
-//queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
-//queries['gaylord4'] = '/polaris/Search/fulldisplay.aspx?&type=Keyword&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0&term=\'+isbn,';
-queries['koha'] = '/cgi-bin/koha/opac-search.pl?idx=nb&q=\'+isbn,';
-//queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
-//queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
-//queries['aleph'] = '/F/?find_code=VAR1&func=VAR2&local_base=VAR3&request=\'+isbn,';
-queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
-//queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
-//queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
-//queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
-//queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
-//queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
-queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
-queries['exlibris'] = '/vwebv/search?argType1=all&searchCode1=ISBN&combine2=andlocation=all&type=all&medium=all&language=all&content=all&media=all&carrier=all&recCount=25&searchType=2&page.search.search.button=Search&searchArg1=\'+isbn,';
 
+queries['worldcat'] = '/search?qt=worldcat_org_all&q=\'+isbn,';
+queries['evergreen'] = 'https://gapines.org/eg/opac/results?qtype=keyword&locg=1&query=\'+isbn,';
+queries['exlibris'] = '/primo_library/libweb/action/search.do?fn=search&vid=UTDALMA&Submit=Search&vl%28freeText0%29=\'+isbn,';
+queries['voyager'] = '/cgi-bin/Pwebrecon.cgi?SAB1=\'+isbn+\'&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25\',';
+queries['ipac'] = '/ipac20/ipac.jsp?index=VAR1&term=\'+isbn,';
+queries['dra'] = '/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=\(&query=\'+isbn,';
+queries['ds'] = '/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=\'+isbn,';
+queries['talis'] = '/resolver/lookup.opacs?sid=redirect:DOMAINNAME&isbn=\'+isbn,';
+queries['pica'] = '/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=\'+isbn,';
+queries['sirsi'] = '/uhtbin/cgisirsi/x/0/0/5/?searchdata1=\'+isbn,';
+queries['sirsi2'] = '/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=\'+isbn,';
+queries['sirsi3'] = '/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=\'+isbn,';
+queries['gaylord'] = '/polaris/search/Z3950Gateway.dll/PowerPAC.1/?by=ISBN&loc=SearchResult&term=\'+isbn,';
+queries['gaylord3'] = '/polaris/search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=\'+isbn,';
+queries['gaylord4'] = '/polaris/Search/fulldisplay.aspx?&type=Keyword&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0&term=\'+isbn,';
+queries['koha'] = '/cgi-bin/koha/opac-searchresults.pl?isbn=\'+isbn,';
+queries['eosQ'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=\'+isbn,';
+queries['eosGLAS'] = '/VAR1/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=\'+isbn,';
+queries['aleph'] = '/F/?find_code=VAR1&func=VAR2&local_base=VAR3&request=\'+isbn,';
+queries['aleph2'] = '/F/?func=scan&scan_code=IBN&scan_start=\'+isbn,';
+queries['tlc'] = '/TLCScripts/interpac.dll?Browse&Config=VAR1&SearchType=3&SearchField=4096&SearchData=\'+isbn,';
+queries['tlcaqua'] = '/?q=isbn:\'+isbn,';
+queries['winnebago'] = '/winnebago/search/found.asp?index1=IB&term1=\'+isbn,';
+queries['athena'] = '/athcgi/athweb.pl?a=sr&ci=VAR1&st=adv&k1=\'+isbn,';
+queries['sagebrush'] = '/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=\'+isbn,';
+queries['bibliocommons'] = '/search?custom_query=identifier%3A(\'+isbn,)';
+
+bookmarklets['worldcat']   = pre + '\'BASEURL\'+\'' + queries['worldcat']   +  post;
+bookmarklets['evergreen']   = pre + '\'BASEURL\'+\'' + queries['evergreen']   +  post;
+bookmarklets['exlibris']   = pre + '\'BASEURL\'+\'' + queries['exlibris']   +  post;
 bookmarklets['innovative'] = pre + '\'BASEURL\'+\'' + queries['innovative'] +  post;
-//bookmarklets['voyager']    = pre + '\'BASEURL\'+\'' + queries['voyager']    +  post;
-//bookmarklets['ipac']       = pre + '\'BASEURL\'+\'' + queries['ipac']       +  post;
-//bookmarklets['dra']        = pre + '\'BASEURL\'+\'' + queries['dra']        +  post;
-//bookmarklets['ds']         = pre + '\'BASEURL\'+\'' + queries['ds']         +  post;
-//bookmarklets['talis']      = pre + '\'BASEURL\'+\'' + queries['talis']      +  post;
-//bookmarklets['pica']       = pre + '\'BASEURL\'+\'' + queries['pica']       +  post;
+bookmarklets['voyager']    = pre + '\'BASEURL\'+\'' + queries['voyager']    +  post;
+bookmarklets['ipac']       = pre + '\'BASEURL\'+\'' + queries['ipac']       +  post;
+bookmarklets['dra']        = pre + '\'BASEURL\'+\'' + queries['dra']        +  post;
+bookmarklets['ds']         = pre + '\'BASEURL\'+\'' + queries['ds']         +  post;
+bookmarklets['talis']      = pre + '\'BASEURL\'+\'' + queries['talis']      +  post;
+bookmarklets['pica']       = pre + '\'BASEURL\'+\'' + queries['pica']       +  post;
 bookmarklets['sirsi']      = pre + '\'BASEURL\'+\'' + queries['sirsi']      +  post;
-//bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
+bookmarklets['sirsi2']     = pre + '\'BASEURL\'+\'' + queries['sirsi2']     + post;
 bookmarklets['sirsi3']     = pre + '\'BASEURL\'+\'' + queries['sirsi3']     + post;
-//bookmarklets['gaylord']    = pre + '\'BASEURL\'+\'' + queries['gaylord']    +  post;
-//bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
-//bookmarklets['gaylord4']   = pre + '\'BASEURL\'+\'' + queries['gaylord4']   +  post;
+bookmarklets['gaylord']    = pre + '\'BASEURL\'+\'' + queries['gaylord']    +  post;
+bookmarklets['gaylord3']   = pre + '\'BASEURL\'+\'' + queries['gaylord3']   +  post;
+bookmarklets['gaylord4']   = pre + '\'BASEURL\'+\'' + queries['gaylord4']   +  post;
 bookmarklets['koha']       = pre + '\'BASEURL\'+\'' + queries['koha']       +  post;
-//bookmarklets['eosQ']       = pre + '\'BASEURL\'+\'' + queries['eosQ']       +  post;
-//bookmarklets['eosGLAS']    = pre + '\'BASEURL\'+\'' + queries['eosGLAS']    +  post;
-//bookmarklets['aleph']      = pre + '\'BASEURL\'+\'' + queries['aleph']      +  post;
+bookmarklets['eosQ']       = pre + '\'BASEURL\'+\'' + queries['eosQ']       +  post;
+bookmarklets['eosGLAS']    = pre + '\'BASEURL\'+\'' + queries['eosGLAS']    +  post;
+bookmarklets['aleph']      = pre + '\'BASEURL\'+\'' + queries['aleph']      +  post;
 bookmarklets['aleph2']     = pre + '\'BASEURL\'+\'' + queries['aleph2']     +  post;
-//bookmarklets['tlc']        = pre + '\'BASEURL\'+\'' + queries['tlc']        +  post;
-//bookmarklets['tlcaqua']    = pre + '\'BASEURL\'+\'' + queries['tlcaqua']    +  post;
-//bookmarklets['winnebago']  = pre + '\'BASEURL\'+\'' + queries['winnebago']  +  post;
-//bookmarklets['athena']     = pre + '\'BASEURL\'+\'' + queries['athena']     +  post;
-//bookmarklets['sagebrush']  = pre + '\'BASEURL\'+\'' + queries['sagebrush']  +  post;
+bookmarklets['tlc']        = pre + '\'BASEURL\'+\'' + queries['tlc']        +  post;
+bookmarklets['tlcaqua']    = pre + '\'BASEURL\'+\'' + queries['tlcaqua']    +  post;
+bookmarklets['winnebago']  = pre + '\'BASEURL\'+\'' + queries['winnebago']  +  post;
+bookmarklets['athena']     = pre + '\'BASEURL\'+\'' + queries['athena']     +  post;
+bookmarklets['sagebrush']  = pre + '\'BASEURL\'+\'' + queries['sagebrush']  +  post;
 bookmarklets['bibliocommons']  = pre + '\'BASEURL\'+\'' + queries['bibliocommons']  +  ')' + post;
-bookmarklets['exlibris']  = pre + '\'BASEURL\'+\'' + queries['exlibris']  +  post;
 
 function build()
 {
@@ -82,14 +87,14 @@ function build()
 	var3 = '';
 
 
-    try  
-      { 
+    try
+      {
 	  var1 = document.forms['byo'][vendor].value;
 	  var2 = document.forms['byo'][vendor+'2'].value;
 	  var3 = document.forms['byo'][vendor+'3'].value;
-//	  var1 = eval ( "document.forms['byo']." + vendor + ".value" ); 
-//	  var2 = eval ( "document.forms['byo']." + vendor + "2.value" ); 
-//	  var3 = eval ( "document.forms['byo']." + vendor + "3.value" ); 
+//	  var1 = eval ( "document.forms['byo']." + vendor + ".value" );
+//	  var2 = eval ( "document.forms['byo']." + vendor + "2.value" );
+//	  var3 = eval ( "document.forms['byo']." + vendor + "3.value" );
 	  }
 	catch (e) {}
 
@@ -97,16 +102,16 @@ function build()
 	var b = new RegExp ('/$');
 	baseurl = baseurl.replace ( b, '' );
     var domainname = baseurl.replace ( 'http://', '')
- 
+
 	var libname = document.forms['byo'].libname.value;
 
-//    if ( vendor == 'talis' ) { baseurl = 'http://opacs.talis.com'; }
+    if ( vendor == 'talis' ) { baseurl = 'http://opacs.talis.com'; }
 
 	var q = bookmarklets[vendor];  // for the actual query
 	var t = queries[vendor];       // for the interactive test
 
 	var tr = new RegExp('\'\\+isbn,|\'\\+isbn\\+\'');
-	t = t.replace ( tr, '1579903002' );
+	t = t.replace ( tr, '9781400066407' );
 
 	var re = new RegExp('DOMAINNAME');
     t = t.replace ( re, domainname );
@@ -130,83 +135,60 @@ function build()
 	re = new RegExp('local_base=&');
 	q = q.replace ( re, '' );
 	t = t.replace ( re, '' );
-    
+
 	document.write('<html><head><style>body{font-family:verdana;margin:30px;}</style><title>LibraryLookup bookmarklet for ' + libname + '</title></head><body>');
- 	document.write('First test the URL that your bookmarklet will try to fetch. Click <a href="' + baseurl + t + '">here</a>.</p><p>If it worked, here is the same URL wrapped up in your bookmarklet: <a href="' + q + '">' + libname + '</a>. Drag it to your link toolbar.</p><p>Base URL: ' + baseurl + '<br>Vendor: ' + vendor + '</p><p>Bookmarklet text: ' + q + '</p><p>Problems dragging your bookmarklet to the link toolbar? See <a href="http://weblog.infoworld.com/udell/2006/03/20.html">this screencast</a>.</p><p>The <a href="http://weblog.infoworld.com/udell/stories/2002/12/11/librarylookup.html">LibraryLookup</a> project.</p>');
+ 	document.write('First test the URL that your bookmarklet will try to fetch. Click <a href="' + baseurl + t + '">here</a>.</p><p>If it worked, here is the same URL wrapped up in your bookmarklet: <a href="' + q + '">' + libname + '</a>. Drag it to your link toolbar.</p><p>Base URL: ' + baseurl + '<br>Vendor: ' + vendor + '</p><p>Bookmarklet text: ' + q + '</p><p>Problems dragging your bookmarklet to the link toolbar? See <a href="http://jonudell.net/udell/2006-03-20-bookmarklets-101.html">this screencast</a>.</p><p>The <a href="http://jonudell.net/udell/2002-12-11-librarylookup-bookmarklets.html">LibraryLookup</a> project.</p>');
 	document.write('</body></html>');
 	document.close();
 }
 </script>
+<p>
+Can't find your library on one of the <a href="http://jonudell.net/udell/2002-12-11-librarylookup-bookmarklets.html">lists</a>? Try building your own bookmarklet.
+</p>
+
 <form name="byo" action="javascript:build()">
 <table cellspacing="0" cellpadding="4" border="0">
- 
+
 <tr>
 <td align="right">Base URL</td>
-<td><input size="30" value="http://library.santarosa.edu" name="baseurl"> (Example: http://library.santarosa.edu)</td>
+<td><input size="30" value="https://www.worldcat.org" name="baseurl"> (Example: https://www.worldcat.org)</td>
 </tr>
- 
+
 <tr>
 <td align="right">Library Name</td>
-<td><input size="30" value="Santa Rosa Junior College Library" name="libname"> (Example: Santa Rosa Junior College)</td>
+<td><input size="30" value="WorldCat" name="libname"> (Example: WorldCat)</td>
 </tr>
- 
+
 <tr>
 <td align="right">Vendor</td>
 <td>
-<input type="radio" name="vendors" value="exlibris" checked> Ex Libris (<a href="http://library.santarosa.edu/vwebv/search?argType1=all&searchCode1=ISBN&location=all&type=all&medium=all&language=all&content=all&media=all&carrier=all&recCount=25&searchType=2&page.search.search.button=Search&searchArg1=0307592812">example</a>)
-   
+<input type="radio" name="vendors" value="worldcat" checked> WorldCat (<a href="http://www.worldcat.org/search?qt=worldcat_org_all&q=9781400066407">example</a>)
+<br><input type="radio" name="vendors" value="exlibris"> ExLibris (<a href="http://utdallas-primo.hosted.exlibrisgroup.com/primo_library/libweb/action/search.do?fn=search&ct=search&initialSearch=true&vl%28freeText0%29=9781400066407&vid=UTDALMA&Submit=Search">example</a>)
+<br><input type="radio" name="vendors" value="evergreen"> Evergreen (<a href="https://gapines.org/eg/opac/results?qtype=keyword&locg=1&query=9781400066407">example</a>)
 <br><input type="radio" name="vendors" value="innovative"> Innovative (<a href="http://ksclib.keene.edu/search/i=1579903002">example</a>)
-<!--
 <br><input type="radio" name="vendors" value="voyager"> Voyager (<a href="http://voyager.antiochne.edu/cgi-bin/Pwebrecon.cgi?SAB1=1579903002&BOOL1=all%20of%20these&FLD1=ISBN%20(ISBN)&DB=local&CNT=25">example</a>)
--->
-<!--
 <br><input type="radio" name="vendors" value="ipac"> iPac<sup>1</sup> (<a href="http://www.elpl.org:81/ipac20/ipac.jsp?index=ISBN&term=1579903002">example</a>) <input name="ipac" value="ISBN"/>
--->
-<!--
-<br><input type="radio" name="vendors" value="dra"> Sirsi/DRA (<a href="http://jpl.coj.net/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=(&query=1579903002">example</a>)
--->
-<br><input type="radio" name="vendors" value="sirsi"> Sirsi (WebCat)<sup>1</sup> (<a href="http://library.usc.edu/uhtbin/cgisirsi/x/0/0/5/?searchdata1=067165991X">example</a>)
-<!--
+<br><input type="radio" name="vendors" value="dra"> Sirsi/DRA (<a href="http://splcat.saskatoonlibrary.ca/web2/tramp2.exe/do_authority_search/guest?SETTING_KEY=English&location_group_filter=all&servers=1home&index=(&query=1579903002">example</a>)
+<br><input type="radio" name="vendors" value="sirsi"> Sirsi (WebCat)<sup>2</sup> (<a href="http://library.usc.edu/uhtbin/cgisirsi/x/0/0/5/?searchdata1=067165991X">example</a>)
 <br><input type="radio" name="vendors" value="sirsi2"> Sirsi/Web2 (<a href="http://catalog.library.phila.gov/web2/tramp2.exe/do_ccl_search/guest?SETTING_KEY=English&servers=1home&index=bn&query=0767910052">example</a>)
--->
-<br><input type="radio" name="vendors" value="sirsi3"> Sirsi/Dynix<sup>2</sup> (<a href="http://find.sonomalibrary.org/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=1594486298">example</a>)
-<!--
+<br><input type="radio" name="vendors" value="sirsi3"> Sirsi/Dynix (<a href="http://find.sonomalibrary.org/client/default/search/results?te=ILS&rt=ISBN|||ISBN|||false&qu=0767910052">example</a>)
 <br><input type="radio" name="vendors" value="talis"> Talis (<a href="http://opacs.talis.com/resolver/lookup.opacs?sid=redirect:boroughofpoole.com&isbn=0747255989">example</a>)
--->
-<!--
 <br><input type="radio" name="vendors" value="ds"> DS (UK) (<a href="http://intranet.cheshire.gov.uk/cgi-bin/viewpoint_server.sh?enqtype=ISBN&enqpara1=query&classpara1=1857237641">example</a>)
--->
-<!--
 <br><input type="radio" name="vendors" value="pica"> Pica (<a href="http://s250.b.tu-harburg.de:8080/DB=1/LNG=DU/CMD?ACT=SRCHA&IKT=1007&SRT=YOP&TRM=157987736">example</a>)
--->
-<!--
-<br><input type="radio" name="vendors" value="gaylord"> Gaylord (PowerPac)<sup>2</sup> (<a href="http://www.solis.lib.or.us/Polaris/Search/z3950Gateway.dll/PowerPac.1?by=ISBN&loc=SearchResult&term=0028649249">example</a>) 
-<br><input type="radio" name="vendors" value="gaylord3"> Gaylord (PowerPac 3.0)<sup>2</sup> (<a href="http://www.wilinet.wccls.lib.or.us/Polaris/Search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
+<br><input type="radio" name="vendors" value="gaylord"> Gaylord (PowerPac)<sup>3</sup> (<a href="http://www.solis.lib.or.us/Polaris/Search/z3950Gateway.dll/PowerPac.1?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
+<br><input type="radio" name="vendors" value="gaylord3"> Gaylord (PowerPac 3.0)<sup>3</sup> (<a href="http://www.wilinet.wccls.lib.or.us/Polaris/Search/PowerPAC.zag/?by=ISBN&loc=SearchResult&term=0028649249">example</a>)
 <br><input type="radio" name="vendors" value="gaylord4"> Gaylord (PowerPac ??) (<a href="http://www.wccls.org/polaris/Search/fulldisplay.aspx?type=Keyword&term=9780545010221&by=ISBN&sort=MP&limit=TOM%3d*&query=&page=0">example</a>)
--->
-<br><input type="radio" name="vendors" value="koha"> Koha (<a href="http://library.org.nz/cgi-bin/koha/opac-search.pl?idx=nb&q=9781410447197">example</a>)
-<!--
+<br><input type="radio" name="vendors" value="koha"> Koha (<a href="http://opac.library.org.nz/cgi-bin/koha/opac-searchresults.pl?isbn=0431091080">example</a>)
 <br><input type="radio" name="vendors" value="eosQ"> EOS Q-Series/EOS.Web (<a href="http://www.nappanee.lib.in.us/WEBOPAC/search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=IS&txtSearch1=0385504209
-">example</a>)<sup>3</sup> <input name="eosQ" value="WEBOPAC"/>
-<br><input type="radio" name="vendors" value="eosGLAS"> EOS GLAS (<a href="http://library.capitol-college.edu/GLASOPAC/Search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=0072194669">example</a>)<sup>4</sup> <input name="eosGLAS" value="GLASOPAC"/>
--->
-<!--
-<br><input type="radio" name="vendors" value="aleph"> Aleph (older) (<a href="http://aleph2.libnet.ac.il/F/?func=find-b&local_base=uli02&find_code=WSB&request=0415936772">example</a>) <sup>5</sup> <input size="6" name="aleph" /> <sup>6</sup> <input size="6" name="aleph2" /> <sup>7</sup> <input size="6" name="aleph3" />
--->
-<br><input type="radio" name="vendors" value="aleph2"> Aleph (<a href="http://lms01.harvard.edu/F/?func=scan&scan_code=IBN&scan_start=1565925378">example</a>)
-<!--
-<br><input type="radio" name="vendors" value="tlc"> TLC (<a href="http://bnac.state.ky.us/TLCScripts/interpac.dll?Browse&Config=PSL&SearchType=3&SearchField=4096&SearchData=0471128996">example</a>) <sup>8</sup> <input size="6" name="tlc" /> 
+">example</a>)<sup>4</sup> <input name="eosQ" value="WEBOPAC"/>
+<br><input type="radio" name="vendors" value="eosGLAS"> EOS GLAS (<a href="http://library.capitol-college.edu/GLASOPAC/Search/AdvancedSearch.asp?IsFirstDisplay=FALSE&GoPressed=TRUE&ShowOptions=FALSE&selectField1=8&txtSearch1=0072194669">example</a>)<sup>5</sup> <input name="eosGLAS" value="GLASOPAC"/>
+<br><input type="radio" name="vendors" value="aleph"> Aleph (older) (<a href="http://aleph2.libnet.ac.il/F/?func=find-b&local_base=uli02&find_code=WSB&request=0415936772">example</a>) <sup>6</sup> <input size="6" name="aleph" /> <sup>7</sup> <input size="6" name="aleph2" /> <sup>8</sup> <input size="6" name="aleph3" />
+<br><input type="radio" name="vendors" value="aleph2"> Aleph (newer) (<a href="http://lms01.harvard.edu/F/?func=scan&scan_code=IBN&scan_start=1565925378">example</a>)
+<br><input type="radio" name="vendors" value="tlc"> TLC (<a href="http://bnac.state.ky.us/TLCScripts/interpac.dll?Browse&Config=PSL&SearchType=3&SearchField=4096&SearchData=0471128996">example</a>) <sup>9</sup> <input size="6" name="tlc" />
 <br><input type="radio" name="vendors" value="tlcaqua"> TLC Aqua (<a href="http://aquab.ocln.org/?q=isbn:0152022686">example</a>)
--->
-<!--
 <br><input type="radio" name="vendors" value="winnebago"> Winnebago (<a href="http://64.222.191.15/winnebago/search/found.asp?term1=0316172324&index1=IB">example</a>)
--->
-<!--
-<br><input type="radio" name="vendors" value="athena"> Athena (<a href="http://69.21.252.114/athcgi/athweb.pl?a=sr&ci=HS&st=adv&k1=0316172324"">example</a>) <sup>9</sup> <input size="6" name="athena" />
--->
-<!--
+<br><input type="radio" name="vendors" value="athena"> Athena (<a href="http://69.21.252.114/athcgi/athweb.pl?a=sr&ci=HS&st=adv&k1=0316172324"">example</a>) <sup>10</sup> <input size="6" name="athena" />
 <br><input type="radio" name="vendors" value="sagebrush"> Sagebrush (<a href="http://71.233.230.231/InfoCentre/LibraryAdvanced.do?goSearch=Search&searchLimit1=ISBN+or+LCCN&searchTerm1=089296717X">example</a>)
--->
 <br><input type="radio" name="vendors" value="bibliocommons"> BiblioCommons (<a href="http://bpl.bibliocommons.com/search?custom_query=identifier%3A(9781400066407)">example</a>)
 </td>
 </tr>
@@ -216,59 +198,54 @@ function build()
 </p>
 <p>
 <blockquote><i>
-<sup>1</sup> In the case of Sirsi (WebCat), the message "Error #csnot defined" doesn't indicate failure, but only the absence of the tested-for ISBN, 1579903002. In that case, try replacing 1579903002 with the ISBN of a book that's known to exist in your catalog in order to verify that the bookmarklet is working. Some Sirsi systems will also need cgisirsi.exe instead of cgisirsi. And some will require you to login. In other words, your mileage may vary.
+<sup>1</sup> Some IPAC20 systems require ISBNE or ISBNEX instead of ISBN.
 </i></blockquote>
 <blockquote><i>
-<sup>2</sup> You may need to click Search again in the popup window.
-</i></blockquote>
-</p>
-<!--
-<blockquote><i>
-<sup>2</sup> Obsolete?
+<sup>2</sup> In the case of Sirsi (WebCat), the message "Error #csnot defined" doesn't indicate failure, but only the absence of the tested-for ISBN, 1579903002. In that case, try replacing 1579903002 with the ISBN of a book that's known to exist in your catalog in order to verify that the bookmarklet is working. Some Sirsi systems will also need cgisirsi.exe instead of cgisirsi. And some will require you to login. In other words, your mileage may vary.
 </i></blockquote>
 <blockquote><i>
-<sup>3</sup> WEBOPAC is the default virtual directory, but you may need to adjust it.
+<sup>3</sup> Obsolete?
 </i></blockquote>
 <blockquote><i>
-<sup>4</sup> GLASOPAC is the default virtual directory, but you may need to adjust it.
-/<i></blockquote>
+<sup>4</sup> WEBOPAC is the default virtual directory, but you may need to adjust it.
+</i></blockquote>
+<blockquote><i>
+<sup>5</sup> GLASOPAC is the default virtual directory, but you may need to adjust it.
+</i></blockquote>
 <blockquote><i>
 For Aleph systems, check an example URL to find out how to use:
 <div>
-<sup>5</sup> Aleph "find_code" -- in this example, you'd  use 'WSB'.
+<sup>6</sup> Aleph "find_code" -- in this example, you'd  use 'WSB'.
 </div>
 <div>
-<sup>6</sup> Aleph "func" -- in this example, you'd  use 'find-b'.
+<sup>7</sup> Aleph "func" -- in this example, you'd  use 'find-b'.
 </div>
 <div>
-<sup>7</sup> Aleph "local_base" -- not always needed, but in this example, it's 'uli02'.
+<sup>8</sup> Aleph "local_base" -- not always needed, but in this example, it's 'uli02'.
 </div>
 </blockquote>
 <blockquote>
-<sup>8</sup> TLC "Config" -- in this example, you'd use 'PSL'. To discover it, click the Browse button, and look for the value following 'Config='.
+<sup>9</sup> TLC "Config" -- in this example, you'd use 'PSL'. To discover it, click the Browse button, and look for the value following 'Config='.
 </blockquote>
 <blockquote>
-<sup>9</sup> Athena "ci" -- in this example, you'd use 'HS'. 
+<sup>10</sup> Athena "ci" -- in this example, you'd use 'HS'.
 </blockquote>
--->
 </p>
 <p>
 <b>FAQ</b>
 </p>
-<p><b>Q</b>: 
+<p><b>Q</b>:
 How do I find out which vendor my library uses?
 </p>
-<p><b>A</b>: 
+<p><b>A</b>:
 Click the sample search links, and look for a familiar results screen. Or, ask your librarian!
 </p>
-<p><b>Q</b>: 
+<p><b>Q</b>:
 What if my library uses a system that's not supported?
 </p>
-<p><b>A</b>: 
-There are zillions of <a href="http://www.libdex.com/vendor.html">vendors</a> of library software. The LibraryLookup project can add support for yours if it is possible to form a URL that queries your system by ISBN (see the sample links above). That will be true for many, but not all, systems. If you can find the magic URL pattern for your system, <a href="mailto:jon@jonudell.info?subject=NewLibraryLookupUrlPattern">pass it along</a>.
+<p><b>A</b>:
+There are zillions of vendors of integrated library system (ILS) software. The LibraryLookup project can add support for yours if it is possible to form a URL that queries your system by ISBN (see the sample links above). That will be true for many, but not all, systems. If you can find the magic URL pattern for your system, <a href="https://github.com/judell/LibraryLookup/issues">pass it along</a>.
 </p>
-<p><b>Revisions</b></p>
-<p><a href="http://github.com/judell/LibraryLookup">http://github.com/judell/LibraryLookup</a></p>
 </form>
 
 </body>
